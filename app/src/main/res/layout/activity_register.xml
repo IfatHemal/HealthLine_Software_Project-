@@ -27,14 +27,13 @@
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/healthline_logo"
-                />
+                android:src="@drawable/healthline_logo" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="HealthLine"
-                android:textSize="28sp"
+                android:textSize="38sp"
                 android:textStyle="bold"
                 android:textColor="#1A56DB" />
         </LinearLayout>
@@ -63,24 +62,31 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="I am a "
+                android:text="Sign up as"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:textColor="#111827"
                 android:layout_marginBottom="6dp" />
 
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:orientation="horizontal"
+                android:background="@drawable/bg_dropdown"
+                android:layout_marginBottom="16dp"
+                >
 
             <Spinner
                 android:id="@+id/spinnerRole"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:background="@drawable/bg_dropdown"
                 android:paddingHorizontal="14dp"
-                android:layout_marginBottom="16dp"
 
                 />
 
+
+            </LinearLayout>
 
 
             <TextView
@@ -100,14 +106,14 @@
                 android:layout_marginBottom="16dp"
                 android:orientation="horizontal">
 
-                <TextView
+                <ImageView
                     android:id="@+id/iconName"
-                    android:layout_width="wrap_content"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
-                    android:text="👤"
-                    android:textColor="#FFFFFF"
-                    android:textSize="16sp"
+                    android:src="@drawable/profile_icon"
+                    android:scaleType="fitCenter"
                     android:layout_marginLeft="14dp"
+                    android:layout_gravity="center"
                     />
 
                 <EditText
@@ -142,13 +148,13 @@
                 android:background="@drawable/bg_input_field"
                 android:layout_marginBottom="16dp">
 
-                <TextView
+                <ImageView
                     android:id="@+id/iconEmail"
-                    android:layout_width="wrap_content"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
-                    android:text="✉"
-                    android:textSize="16sp"
+                    android:src="@drawable/email_icon"
                     android:layout_marginStart="14dp"
+                    android:layout_gravity="center"
                      />
 
                 <EditText
@@ -183,13 +189,13 @@
                 android:background="@drawable/bg_input_field"
                 android:layout_marginBottom="16dp">
 
-                <TextView
+                <ImageView
                     android:id="@+id/iconPass"
-                    android:layout_width="wrap_content"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
-                    android:text="🔒"
-                    android:textSize="16sp"
+                    android:src="@drawable/lock_icon"
                     android:layout_marginStart="14dp"
+                    android:layout_gravity="center"
                     />
 
                 <EditText
@@ -224,13 +230,13 @@
                 android:background="@drawable/bg_input_field"
                 android:layout_marginBottom="20dp">
 
-                <TextView
+                <ImageView
                     android:id="@+id/iconConfirm"
-                    android:layout_width="wrap_content"
+                    android:layout_width="30sp"
                     android:layout_height="wrap_content"
-                    android:text="🔒"
-                    android:textSize="16sp"
+                    android:src="@drawable/lock_icon"
                     android:layout_marginStart="14dp"
+                    android:layout_gravity="center"
                     />
 
                 <EditText
