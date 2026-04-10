@@ -18,7 +18,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
+        //EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.login), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -26,13 +26,8 @@ public class LoginActivity extends AppCompatActivity {
             return insets;
         });
 
-        Spinner spinner = findViewById(R.id.spinnerRole);
-        String[] roles = {"Patient", "Doctor", "Blood Donor", "Ambulance Driver"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(
-                LoginActivity.this, android.R.layout.simple_spinner_dropdown_item, roles);
-        adapter.setDropDownViewResource(
-                android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+
+
 
 
         TextView tvSignup = findViewById(R.id.tvSignup);
