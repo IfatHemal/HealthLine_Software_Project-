@@ -1,5 +1,7 @@
 package com.enumtech.healthline;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -10,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
+    SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,5 +23,15 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        sharedPreferences = getSharedPreferences("myApp",MODE_PRIVATE);
+        String email = sharedPreferences.getString("email", "");
+        if(email.length()<=0){
+            startActivity(new Intent(MainActivity.this,LoginActivity.class));
+            finish();
+        }
+
+
+
     }
 }

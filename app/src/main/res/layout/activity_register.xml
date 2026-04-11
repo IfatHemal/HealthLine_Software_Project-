@@ -6,7 +6,7 @@
     android:background="#E8EEF7"
     android:fillViewport="true"
     android:id="@+id/register"
-    tools:context=".activity_register"
+    tools:context=".RegisterActivity"
     >
 
     <LinearLayout
