@@ -10,6 +10,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.bottomappbar.BottomAppBar;
+
 public class MainActivity extends AppCompatActivity {
 
     SharedPreferences sharedPreferences;
@@ -29,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
         if(email.length()<=0){
             startActivity(new Intent(MainActivity.this,LoginActivity.class));
             finish();
+        }
+
+        else{
+
         }
 
 
