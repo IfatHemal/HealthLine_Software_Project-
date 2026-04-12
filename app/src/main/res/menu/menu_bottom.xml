@@ -2,15 +2,17 @@
     <item
         android:id="@+id/nav_home"
         android:title="Home"
-        android:icon="@drawable/icon_home"/>
-
-    <item
-        android:id="@+id/nav_notifications"
-        android:title="Notifications"
         android:icon="@drawable/icon8_home"/>
 
     <item
         android:id="@+id/nav_profile"
         android:title="Profile"
-        android:icon="@drawable/icon_home"/>
+        android:icon="@drawable/profile_icon8"
+
+        />
+
+    <item
+        android:id="@+id/nav_notification"
+        android:title="Notification"
+        android:icon="@drawable/notfication_icon"/>
 </menu>
