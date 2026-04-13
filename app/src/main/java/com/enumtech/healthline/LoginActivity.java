@@ -24,6 +24,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -61,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
                 else {
 
                     String url = "https://ifathemalapp.com/apps/healthline/login.php";
-                    stringRequest(url);
+                    loginRequest(url,email,password);
                 }
 
             }
@@ -81,54 +84,68 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-    public void stringRequest(String url) {
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String s) {
-                if(s.equalsIgnoreCase("no account")){
-                    Toast.makeText(LoginActivity.this,"There is no account on this email, try signup first",Toast.LENGTH_LONG).show();
+    public void loginRequest(String url,String email,String password) {
+
+
+            StringRequest request = new StringRequest(Request.Method.POST, url,
+
+                    response -> {
+
+                        try {
+                            JSONObject obj = new JSONObject(response);
+
+                            if (obj.getString("status").equals("success")) {
+
+                                String id = obj.getString("id");
+                                String name = obj.getString("name");
+                                String role = obj.getString("role");
+
+                                SharedPreferences sharedPreferences = getSharedPreferences("myApp",MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putString("id", id);
+                                editor.putString("name", name);
+                                editor.putString("email", email);
+                                editor.putString("role", role);
+                                editor.apply();
+
+                                Toast.makeText(LoginActivity.this, "Welcome " + name, Toast.LENGTH_SHORT).show();
+
+                                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                                finish();
+
+                            }
+
+                        } catch (JSONException e) {
+
+                            if (response.equals("password incorrect")) {
+                                Toast.makeText(LoginActivity.this, "Wrong Password", Toast.LENGTH_SHORT).show();
+
+                            } else if (response.equals("no account")) {
+                                Toast.makeText(LoginActivity.this, "No Account Found", Toast.LENGTH_SHORT).show();
+
+                            } else {
+                                Toast.makeText(LoginActivity.this, "Unknown Error", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                    },
+
+                    error -> Toast.makeText(LoginActivity.this, "Volley Error: " + error.getMessage(), Toast.LENGTH_SHORT).show()
+
+            ) {
+                @Override
+                protected Map<String, String> getParams() {
+                    Map<String, String> map = new HashMap<>();
+
+                    map.put("email", email);
+                    map.put("password", password);
+
+                    return map;
                 }
-                else if(s.equalsIgnoreCase("password incorrect")){
-                    Toast.makeText(LoginActivity.this,"Incorrect Password!, try again.",Toast.LENGTH_LONG).show();
-                    etPassword.setError("Enter correct password");
-                }
-                else{
-                    SharedPreferences sharedPreferences = getSharedPreferences("myApp",MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("email",etEmail.getText().toString());
-                    editor.apply();
+            };
 
-                    startActivity(new Intent(LoginActivity.this,MainActivity.class));
-                    finish();
-                }
+            RequestQueue queue = Volley.newRequestQueue(this);
+            queue.add(request);
+        }
 
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError volleyError) {
-                Toast.makeText(LoginActivity.this,"Error: ",Toast.LENGTH_LONG).show();
-                if(volleyError.networkResponse != null){
-                    Log.e("VOLLEY_ERROR", new String(volleyError.networkResponse.data));
-                } else {
-                    Log.e("VOLLEY_ERROR", volleyError.toString());
-                }
-
-            }
-        }) {
-            @Nullable
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String> myMap = new HashMap<String,String>();
-                myMap.put("email",etEmail.getText().toString());
-                myMap.put("password",etPassword.getText().toString());
-
-
-                return myMap;
-            }
-        };
-
-        RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
-        queue.add(stringRequest);
-
-    }
 }

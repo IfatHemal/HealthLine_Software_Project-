@@ -56,6 +56,7 @@
 
 
         <TextView
+            android:id="@+id/tvname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Ifat Hemal"
@@ -67,13 +68,15 @@
 
             />
         <TextView
+            android:id="@+id/tvrole"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Patient Profile"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:gravity="center"
             />
             <TextView
+                android:id="@+id/tvemail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="ifathemal9@gmail.com"
@@ -94,7 +97,7 @@
             android:orientation="horizontal"
             android:padding="10dp"
             android:weightSum="3"
-
+            android:background="@drawable/bg_input_field"
             android:layout_margin="10dp"
             >
             <ImageView
@@ -123,18 +126,21 @@
             android:orientation="horizontal"
             android:padding="10dp"
             android:weightSum="3"
+            android:background="@drawable/bg_input_field"
            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
 
             >
             <ImageView
                 android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_height="30dp"
                 android:src="@drawable/logout_icon"
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 />
 
             <TextView
+                android:id="@+id/tvlogout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Logout"
