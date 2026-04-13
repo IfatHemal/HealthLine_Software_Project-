@@ -55,16 +55,16 @@ public class LoginActivity extends AppCompatActivity {
         btLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = etEmail.getText().toString();
+                String etemail = etEmail.getText().toString();
                 String password = etPassword.getText().toString();
 
-                if(email.isEmpty()||password.isEmpty()){
+                if(etemail.isEmpty()||password.isEmpty()){
                     Toast.makeText(LoginActivity.this,"Fillup all the field",Toast.LENGTH_SHORT).show();
                 }
                 else {
 
                     String url = "https://ifathemalapp.com/apps/healthline/login.php";
-                    loginRequest(url,email,password);
+                    loginRequest(url,etemail,password);
                 }
 
             }
@@ -84,7 +84,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-    public void loginRequest(String url,String email,String password) {
+    public void loginRequest(String url,String etemail,String password) {
 
 
             StringRequest request = new StringRequest(Request.Method.POST, url,
@@ -98,7 +98,9 @@ public class LoginActivity extends AppCompatActivity {
 
                                 String id = obj.getString("id");
                                 String name = obj.getString("name");
+                                String email = obj.getString("email");
                                 String role = obj.getString("role");
+                                String image = obj.getString("image");
 
                                 SharedPreferences sharedPreferences = getSharedPreferences("myApp",MODE_PRIVATE);
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -106,6 +108,7 @@ public class LoginActivity extends AppCompatActivity {
                                 editor.putString("name", name);
                                 editor.putString("email", email);
                                 editor.putString("role", role);
+                                editor.putString("image",image);
                                 editor.apply();
 
                                 Toast.makeText(LoginActivity.this, "Welcome " + name, Toast.LENGTH_SHORT).show();
@@ -137,7 +140,7 @@ public class LoginActivity extends AppCompatActivity {
                 protected Map<String, String> getParams() {
                     Map<String, String> map = new HashMap<>();
 
-                    map.put("email", email);
+                    map.put("email", etemail);
                     map.put("password", password);
 
                     return map;

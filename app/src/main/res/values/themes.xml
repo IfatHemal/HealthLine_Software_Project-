@@ -3,7 +3,7 @@
     <style name="Base.Theme.HealthLine" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <item name="android:statusBarColor">#979696</item>
+        <item name="android:statusBarColor">#FFFFFF</item>
     </style>
 
     <style name="Theme.HealthLine" parent="Base.Theme.HealthLine" />

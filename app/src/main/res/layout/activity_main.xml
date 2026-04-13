@@ -1,49 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E9EEF8"
-    android:id="@+id/main"
+    android:background="#F8FAFC"
+
 
     >
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        app:title="HealthLine"
-        app:titleMarginStart="25dp"
-        app:titleTextColor="#0055D1"
-        app:titleTextAppearance="@style/ToolbarTitleBold"
-        app:menu="@menu/menu_settings"
-        app:logo="@drawable/healthline_icon"
 
-
-        />
-
-
-    <FrameLayout
-        android:id="@+id/framlayout"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="62dp"
-        android:layout_marginBottom="58dp"
-        android:background="#9AC2D4F8" />
+        android:orientation="vertical"
+        android:layout_marginBottom="80dp"
+        >
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="#D6E1FA"
+            app:logo="@drawable/healthline_icon"
+            app:menu="@menu/menu_settings"
+            app:title="HealthLine"
+            app:titleMarginStart="25dp"
+            app:titleTextAppearance="@style/ToolbarTitleBold"
+            app:titleTextColor="#0F172A"
+            android:layout_alignParentTop="true"
+            android:elevation="4dp"
+
+            />
+
+
+
+
+        <FrameLayout
+            android:id="@+id/framlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+
+    </LinearLayout>
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_gravity="bottom"
-        android:background="@android:color/white"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bg_input_field"
+        app:backgroundTint="#D6E1FA"
+        app:itemGravity="center"
+        app:itemIconSize="24dp"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/nav_item_color"
+        app:itemRippleColor="#E2E8F0"
+        app:labelVisibilityMode="unlabeled"
         app:menu="@menu/menu_bottom"
-        app:itemIconTint="#000000"
-        app:itemTextColor="#000000"
-        app:backgroundTint="#FFFFFF"
+        android:elevation="10dp"
+
 
         />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+
+
+</RelativeLayout>
