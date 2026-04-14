@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".ProfileFragment"
     android:orientation="vertical"
-    android:background="#F8FAFC"
+    android:background="#E8EEF7"
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
 
@@ -177,6 +177,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Edit Profile"
+                    android:textColor="#000000"
                     android:gravity="center"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -278,6 +279,7 @@
             android:weightSum="3"
             android:clickable="true"
             android:contextClickable="true"
+            android:layout_marginBottom="10dp"
 
             >
 

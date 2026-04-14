@@ -110,8 +110,6 @@ public class ProfileFragment extends Fragment {
         }
 
 
-        Toast.makeText(getActivity(),"Image: "+image,Toast.LENGTH_LONG).show();
-
         ActivityResultLauncher<Intent> imagePickerLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
                 new ActivityResultCallback<ActivityResult>() {
             @Override

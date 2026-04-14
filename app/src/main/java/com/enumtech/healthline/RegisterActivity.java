@@ -102,7 +102,7 @@ public class RegisterActivity extends AppCompatActivity {
                      else {
                          String url = "https://ifathemalapp.com/apps/healthline/signup.php";
                          stringRequest(url);
-                         finish();
+
                      }
                  }
             }
@@ -123,6 +123,7 @@ public class RegisterActivity extends AppCompatActivity {
                 }
                 else if(s.trim().equalsIgnoreCase("signup successful")){
                     startActivity(new Intent(RegisterActivity.this,MainActivity.class));
+                    finish();
                 }
                 else {
                     Toast.makeText(RegisterActivity.this,"Signup failed",Toast.LENGTH_LONG).show();

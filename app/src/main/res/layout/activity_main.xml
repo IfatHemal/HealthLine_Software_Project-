@@ -4,25 +4,27 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8FAFC"
+
+
 
 
     >
+
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginBottom="80dp"
+
         >
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:background="#D6E1FA"
-            app:logo="@drawable/healthline_icon"
+            android:background="#FFFFFF"
+            app:logo="@drawable/icon_logo_healthline"
             app:menu="@menu/menu_settings"
             app:title="HealthLine"
             app:titleMarginStart="25dp"
@@ -37,7 +39,7 @@
 
 
         <FrameLayout
-            android:id="@+id/framlayout"
+            android:id="@+id/framelayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />
@@ -51,18 +53,17 @@
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/bg_input_field"
-        app:backgroundTint="#D6E1FA"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="3dp"
+        android:background="@drawable/bg_card_white"
+        app:backgroundTint="#FFFFFF"
         app:itemGravity="center"
         app:itemIconSize="24dp"
         app:itemIconTint="@color/black"
         app:itemTextColor="@color/nav_item_color"
         app:itemRippleColor="#E2E8F0"
-        app:labelVisibilityMode="unlabeled"
+        app:labelVisibilityMode="labeled"
         app:menu="@menu/menu_bottom"
         android:elevation="10dp"
 
