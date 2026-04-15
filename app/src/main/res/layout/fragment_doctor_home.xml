@@ -172,6 +172,15 @@
 
                     </LinearLayout>
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dp"
+                        android:text="৳18k"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
                     <LinearLayout
                         android:layout_width="240dp"
                         android:layout_height="160dp"
@@ -187,16 +196,6 @@
                             android:text="💰"
                             android:textSize="24sp"
                             android:layout_marginBottom="12dp" />
-
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="৳18k"
-                            android:textColor="#FFFFFF"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
-                            android:layout_marginBottom="6dp" />
 
 
                         <TextView
@@ -345,13 +344,19 @@
 
 
                 <LinearLayout
+                    android:id="@+id/manageprofile"
+                    android:clickable="true"
                     android:layout_width="0dp"
                     android:layout_height="140dp"
                     android:layout_weight="1"
                     android:orientation="vertical"
                     android:gravity="center"
                     android:background="@drawable/bg_card_white"
-                    android:layout_marginStart="7dp">
+                    android:layout_marginStart="7dp"
+
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    >
 
                     <LinearLayout
                         android:layout_width="58dp"
