@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DoctorScheduleManagement"
+    android:orientation="vertical"
+    android:background="#D6EED6"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Available Days"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#000000"
+
+            />
+
+        <CheckBox
+            android:id="@+id/sat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saturday"
+            android:textColor="#000000"
+            android:buttonTint="#000000"
+            />
+
+        <CheckBox
+            android:id="@+id/sun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sunday"
+            android:textColor="#000000"
+            android:buttonTint="#000000"
+            />
+
+        <CheckBox
+            android:id="@+id/mon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Monday"
+            android:textColor="#000000"
+            android:buttonTint="#000000"
+            />
+
+        <CheckBox
+            android:id="@+id/tue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tuesday"
+            android:textColor="#000000"
+            android:buttonTint="#000000"
+            />
+
+        <CheckBox
+            android:id="@+id/wed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wednesday"
+            android:textColor="#000000"
+            android:buttonTint="#000000"
+            />
+
+        <CheckBox
+            android:id="@+id/thu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thursday"
+            android:textColor="#000000"
+            android:buttonTint="#000000"
+            />
+
+        <CheckBox
+            android:id="@+id/fri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Friday"
+            android:textColor="#000000"
+            android:buttonTint="#000000"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Start Time"
+            android:textStyle="bold"
+            android:textColor="#000000"
+
+            />
+
+
+        <TextView
+            android:id="@+id/startTime"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#E0E0E0"
+            android:gravity="center"
+            android:text="Select Start Time"
+            android:clickable="true"
+            android:textColor="#000000"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="End Time"
+            android:textStyle="bold"
+            android:textColor="#000000"
+
+            />
+
+
+        <TextView
+            android:id="@+id/endTime"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#E0E0E0"
+            android:gravity="center"
+            android:text="Select End Time"
+            android:clickable="true"
+            android:textColor="#000000"
+
+            />
+
+
+        <Button
+            android:id="@+id/btnupdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update &amp; Save Schedule"
+            android:layout_margin="20dp"
+            android:layout_gravity="center"
+            />
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</LinearLayout>

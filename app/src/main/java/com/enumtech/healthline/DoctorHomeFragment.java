@@ -16,7 +16,7 @@ import android.widget.LinearLayout;
 public class DoctorHomeFragment extends Fragment {
 
 
-    LinearLayout manageprofile;
+    LinearLayout manageprofile, manageDoctorSchedule;
     HorizontalScrollView scrollView;
     Handler handler = new Handler();
     int scrollX = 0;
@@ -29,6 +29,7 @@ public class DoctorHomeFragment extends Fragment {
 
         scrollView = doctorHomeView.findViewById(R.id.scrollview);
         manageprofile = doctorHomeView.findViewById(R.id.manageprofile);
+        manageDoctorSchedule = doctorHomeView.findViewById(R.id.manageDoctorSchedule);
 
 
         Runnable runnable = new Runnable() {
@@ -54,6 +55,15 @@ public class DoctorHomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(),DoctorManageProfile.class));
+            }
+        });
+
+
+        manageDoctorSchedule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(getActivity(), DoctorScheduleManagement.class));
             }
         });
 
