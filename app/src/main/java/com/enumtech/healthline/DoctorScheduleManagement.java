@@ -152,8 +152,6 @@ public class DoctorScheduleManagement extends AppCompatActivity {
                             params.put("id", id);
                             params.put("start_time", start_time);
                             params.put("end_time", end_time);
-
-                            // send as comma separated string
                             params.put("days", selectedDays.toString());
 
                             return params;
