@@ -2,6 +2,7 @@ package com.enumtech.healthline;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -30,6 +31,7 @@ public class BookDoctorAppointment extends AppCompatActivity {
     EditText searchBar;
     Spinner hospitalSpinner, specialitySpinner;
     ListView listView;
+
 
     ArrayList<HashMap<String, String>> doctorList = new ArrayList<>();
     DoctorListAdapter adapter;
@@ -147,13 +149,14 @@ public class BookDoctorAppointment extends AppCompatActivity {
 
                             HashMap<String, String> map = new HashMap<>();
 
+                            map.put("doctorid",obj.getString("doctorid"));
                             map.put("name", obj.optString("name", "N/A"));
                             map.put("speciality", obj.optString("speciality", "N/A"));
                             map.put("hospital", obj.optString("hospital", "N/A"));
                             map.put("schedule", obj.optString("schedule", "N/A"));
-                            map.put("fees", obj.optString("fees", "0"));
-                            map.put("experience", obj.optString("experience", "0"));
-                            map.put("rating", obj.optString("rating", "0"));
+                            map.put("fees", obj.optString("fees", "N/A"));
+                            map.put("experience", obj.optString("experience", "N/A"));
+                            map.put("rating", obj.optString("rating", "N/A"));
                             map.put("image",obj.getString("image"));
 
                             doctorList.add(map);
@@ -216,12 +219,12 @@ public class BookDoctorAppointment extends AppCompatActivity {
         public View getView(int position, View convertView, ViewGroup parent) {
 
             ViewHolder holder;
-            ImageView imgDoctor = null;
+
 
             if (convertView == null) {
                 convertView = inflater.inflate(R.layout.doctoritem, parent, false);
 
-                imgDoctor = convertView.findViewById(R.id.imgDoctor);
+
                 holder = new ViewHolder();
 
                 holder.name = convertView.findViewById(R.id.tvName);
@@ -231,6 +234,10 @@ public class BookDoctorAppointment extends AppCompatActivity {
                 holder.fee = convertView.findViewById(R.id.tvFee);
                 holder.experience = convertView.findViewById(R.id.tvExperience);
                 holder.rating = convertView.findViewById(R.id.tvRating);
+                holder.imgDoctor = convertView.findViewById(R.id.imgDoctor);
+                holder.book = convertView.findViewById(R.id.book);
+                holder.review = convertView.findViewById(R.id.review);
+                holder.doctorid = convertView.findViewById(R.id.tvdocid);
 
 
                 convertView.setTag(holder);
@@ -244,21 +251,46 @@ public class BookDoctorAppointment extends AppCompatActivity {
                     .load(model.get("image"))
                     .placeholder(R.drawable.default_profile_picture)
                     .error(R.drawable.default_profile_picture)
-                    .into(imgDoctor);
+                    .into(holder.imgDoctor);
 
-            holder.name.setText(model.get("name").toUpperCase());
+          String doctorname = model.get("name").toUpperCase();
+
+
+
+            holder.doctorid.setText("ID :"+model.get("doctorid"));
+            holder.name.setText(doctorname);
             holder.speciality.setText(model.get("speciality").toUpperCase());
             holder.hospital.setText(model.get("hospital").toUpperCase());
             holder.schedule.setText(model.get("schedule"));
-            holder.fee.setText("Fee: " + model.get("fees"));
+            holder.fee.setText("Fee: " + model.get("fees") +" Taka");
             holder.experience.setText("Experience: " + model.get("experience") + " Years");
             holder.rating.setText("⭐ " + model.get("rating"));
+
+
+            holder.book.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    BookingConfirmationActivity.doctorid = model.get("doctorid");
+                    BookingConfirmationActivity.name = doctorname;
+                    BookingConfirmationActivity.speciality= model.get("speciality").toUpperCase();
+                    BookingConfirmationActivity.hospital = model.get("hospital").toUpperCase();
+                    BookingConfirmationActivity.schedule = model.get("schedule");
+                    BookingConfirmationActivity.fees = model.get("fees");
+                    startActivity(new Intent(BookDoctorAppointment.this,BookingConfirmationActivity.class));
+                }
+            });
+
+
 
             return convertView;
         }
 
         class ViewHolder {
-            TextView name, speciality, hospital, schedule, fee, experience, rating;
+            TextView name, speciality, hospital, schedule, fee, experience, rating, doctorid;
+            ImageView imgDoctor;
+
+            Button review, book;
         }
     }
 }
