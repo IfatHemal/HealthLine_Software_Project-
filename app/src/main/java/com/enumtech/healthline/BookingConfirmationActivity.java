@@ -127,6 +127,7 @@ public class BookingConfirmationActivity extends AppCompatActivity {
         book.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 appointmentRequest();
             }
         });

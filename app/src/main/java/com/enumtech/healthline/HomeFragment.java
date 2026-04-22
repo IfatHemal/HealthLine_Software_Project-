@@ -20,7 +20,7 @@ public class HomeFragment extends Fragment {
 
     HorizontalScrollView scrollView;
     Handler handler = new Handler();
-    LinearLayout bookDoctorAppointment;
+    LinearLayout bookDoctorAppointment, myappointment;
     TextView etsearch;
 
     int scrollX = 0;
@@ -35,6 +35,7 @@ public class HomeFragment extends Fragment {
        scrollView = homeView.findViewById(R.id.scrollview);
        bookDoctorAppointment =homeView.findViewById(R.id.bookDoctorAppointment);
        etsearch = homeView.findViewById(R.id.etSearch);
+       myappointment = homeView.findViewById(R.id.myappointment);
 
 
         Runnable runnable = new Runnable() {
@@ -75,6 +76,13 @@ public class HomeFragment extends Fragment {
         });
 
 
+
+        myappointment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(),MyAppointmentActivity.class));
+            }
+        });
 
 
 

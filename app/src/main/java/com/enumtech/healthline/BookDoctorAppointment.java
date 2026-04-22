@@ -237,7 +237,7 @@ public class BookDoctorAppointment extends AppCompatActivity {
                 holder.imgDoctor = convertView.findViewById(R.id.imgDoctor);
                 holder.book = convertView.findViewById(R.id.book);
                 holder.review = convertView.findViewById(R.id.review);
-                holder.doctorid = convertView.findViewById(R.id.tvdocid);
+
 
 
                 convertView.setTag(holder);
@@ -257,7 +257,7 @@ public class BookDoctorAppointment extends AppCompatActivity {
 
 
 
-            holder.doctorid.setText("ID :"+model.get("doctorid"));
+
             holder.name.setText(doctorname);
             holder.speciality.setText(model.get("speciality").toUpperCase());
             holder.hospital.setText(model.get("hospital").toUpperCase());
@@ -287,7 +287,7 @@ public class BookDoctorAppointment extends AppCompatActivity {
         }
 
         class ViewHolder {
-            TextView name, speciality, hospital, schedule, fee, experience, rating, doctorid;
+            TextView name, speciality, hospital, schedule, fee, experience, rating;
             ImageView imgDoctor;
 
             Button review, book;
