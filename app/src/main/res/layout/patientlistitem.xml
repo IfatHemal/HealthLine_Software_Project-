@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_icon_box_green"
+    android:layout_marginBottom="10dp"
+    >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView android:id="@+id/tvName"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Rugi Rokon"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+
+            />
+        <TextView android:id="@+id/tvSerial"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Serial: 02"
+            android:textSize="16sp"
+            android:paddingTop="5dp"
+            android:textColor="#000000"
+            />
+        <TextView android:id="@+id/tvStatus"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Status: Completed"
+            android:textColor="#F80202"
+            android:textSize="16sp"
+            android:paddingTop="5dp"
+            android:textStyle="bold"
+            android:paddingBottom="5dp"
+
+            />
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            >
+
+            <Button
+                android:id="@+id/btnSkip"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:textSize="16sp"
+                android:text="Skip"
+                android:layout_weight="1"
+                android:backgroundTint="#3D91FA"
+                android:textColor="#ffffff"
+                android:layout_marginRight="5dp"
+                />
+
+            <Button
+                android:id="@+id/btnComplete"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:textSize="16sp"
+                android:text="Completed"
+                android:layout_weight="1"
+                android:backgroundTint="#1AA701"
+                android:textColor="#FFFFFF"
+                />
+
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

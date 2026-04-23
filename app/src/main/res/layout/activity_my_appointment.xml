@@ -7,9 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".MyAppointmentActivity"
     android:orientation="vertical"
-    android:background="#C3E4FF"
+    android:background="#FFFFFF"
+
 
     >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="15dp"
+        >
+
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -25,10 +34,10 @@
         android:id="@+id/appointmentsList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="5dp"
+
 
         />
 
-
+    </LinearLayout>
 
 </LinearLayout>

@@ -165,7 +165,7 @@ public class BookingConfirmationActivity extends AppCompatActivity {
             String dayName = dayFormat.format(calendar.getTime()).toLowerCase();
 
             if(availableDays.contains(dayName)){
-                result.add(dateFormat.format(calendar.getTime())+" - "+dayName.toUpperCase());
+                result.add(dateFormat.format(calendar.getTime()));
                 count++;
             }
 

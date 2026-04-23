@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="10dp"
-        android:background="#E8EEF7"
+        android:background="#D5D4D4"
         >
 
 
@@ -20,7 +20,7 @@
             android:id="@+id/searchBar"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:hint="🔍    Search doctor by name"
+            android:hint="🔍   Search doctor by name"
             android:background="@drawable/bg_input_field"
 
             android:paddingLeft="20dp"

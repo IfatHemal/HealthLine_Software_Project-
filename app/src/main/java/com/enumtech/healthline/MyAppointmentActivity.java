@@ -123,7 +123,7 @@ public class MyAppointmentActivity extends AppCompatActivity {
             tvserial.setText("Serial: "+map.get("serial"));
             tvfees.setText("Fee: "+map.get("fees")+" Taka");
 
-            tvstatus.setText(map.get("status"));
+            tvstatus.setText("Status: "+map.get("status"));
             tvtime.setText("Appointment Time: "+map.get("start_time")+" - "+map.get("end_time"));
 
 
