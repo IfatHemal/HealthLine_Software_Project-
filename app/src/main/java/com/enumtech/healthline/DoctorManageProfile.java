@@ -51,7 +51,7 @@ public class DoctorManageProfile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
+        //EdgeToEdge.enable(this);
         setContentView(R.layout.activity_doctor_manage_profile);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -142,7 +142,7 @@ public class DoctorManageProfile extends AppCompatActivity {
                 selectedSpeciality = spinnerSpeciality.getSelectedItem().toString().toLowerCase();
                 experience = etExperience.getText().toString();
 
-                // ✅ Check for default spinner value
+
                 if(selectedHospital.equals("select hospital") || selectedSpeciality.equals("select speciality")){
                     Toast.makeText(DoctorManageProfile.this,"Hospital and Speciality must be selected",Toast.LENGTH_LONG).show();
                 }

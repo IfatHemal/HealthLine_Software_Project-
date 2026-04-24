@@ -33,31 +33,23 @@ tools:context=".DoctorManageProfile">
             android:focusable="true" />
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="My Profile"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="22dp" />
+
 
 
         <RelativeLayout
             android:id="@+id/avatarContainer"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
 
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="50dp">
+            android:layout_marginBottom="30dp">
 
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/profileimage"
-                android:layout_width="140dp"
-                android:layout_height="140dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:src="@drawable/default_profile_picture"
                 android:scaleType="centerCrop"
                 android:layout_gravity="center"
