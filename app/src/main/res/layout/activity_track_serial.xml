@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".TrackSerialActivity"
     android:orientation="vertical"
-    android:background="#FFFFFF"
+    android:background="#E3ECFF"
     >
 
 
@@ -46,7 +46,9 @@
         <ListView
             android:id="@+id/listTrack"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="8dp"/>
 
     </LinearLayout>
 

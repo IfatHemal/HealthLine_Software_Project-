@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="10dp"
-        android:background="#D5D4D4"
+        android:background="#E8EEF7"
         >
 
 
@@ -71,6 +71,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="8dp"
             />
 
     </LinearLayout>

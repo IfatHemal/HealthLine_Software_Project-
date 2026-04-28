@@ -158,6 +158,7 @@ public class BookDoctorAppointment extends AppCompatActivity {
                             map.put("experience", obj.optString("experience", "N/A"));
                             map.put("rating", obj.optString("rating", "N/A"));
                             map.put("image",obj.getString("image"));
+                            map.put("time", obj.optString("time"));
 
                             doctorList.add(map);
                         }
@@ -277,6 +278,7 @@ public class BookDoctorAppointment extends AppCompatActivity {
                     BookingConfirmationActivity.hospital = model.get("hospital").toUpperCase();
                     BookingConfirmationActivity.schedule = model.get("schedule");
                     BookingConfirmationActivity.fees = model.get("fees");
+                    BookingConfirmationActivity.time = model.get("time");
                     startActivity(new Intent(BookDoctorAppointment.this,BookingConfirmationActivity.class));
                 }
             });

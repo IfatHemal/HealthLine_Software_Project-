@@ -38,9 +38,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
 public class BookingConfirmationActivity extends AppCompatActivity {
-    TextView tvname,tvspecialitiy,tvhospital,tvfees,time;
+    TextView tvname,tvspecialitiy,tvhospital,tvfees,tvtime;
     Spinner selectDate;
-    static String name =null, speciality= null,hospital = null,fees = null,schedule, doctorid=null;
+    static String name =null, speciality= null,hospital = null,fees = null,schedule, doctorid=null, time = null;
     Button book;
     List<String> dates;
     String patientid, selectedDate;
@@ -69,7 +69,7 @@ public class BookingConfirmationActivity extends AppCompatActivity {
         tvspecialitiy = findViewById(R.id.tvSpeciality);
         tvhospital = findViewById(R.id.tvHospital);
         tvfees = findViewById(R.id.tvFee);
-        time = findViewById(R.id.time);
+        tvtime = findViewById(R.id.time);
 
 
 
@@ -137,6 +137,7 @@ public class BookingConfirmationActivity extends AppCompatActivity {
         tvspecialitiy.setText(speciality);
         tvhospital.setText(hospital);
         tvfees.setText("Fee: "+fees+" Taka");
+        tvtime.setText("Time: "+time);
 
     }
 

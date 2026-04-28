@@ -20,7 +20,7 @@ public class HomeFragment extends Fragment {
 
     HorizontalScrollView scrollView;
     Handler handler = new Handler();
-    LinearLayout bookDoctorAppointment, myappointment, trackserial;
+    LinearLayout bookDoctorAppointment, myappointment, trackserial, blooddonor;
     TextView etsearch;
 
     int scrollX = 0;
@@ -37,6 +37,7 @@ public class HomeFragment extends Fragment {
        etsearch = homeView.findViewById(R.id.etSearch);
        myappointment = homeView.findViewById(R.id.myappointment);
        trackserial = homeView.findViewById(R.id.trackserial);
+       blooddonor = homeView.findViewById(R.id.blooddonor);
 
 
         Runnable runnable = new Runnable() {
@@ -89,6 +90,13 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(),TrackSerialActivity.class));
+            }
+        });
+
+        blooddonor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(),BloodDonorList.class));
             }
         });
 

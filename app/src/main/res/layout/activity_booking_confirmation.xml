@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".BookingConfirmationActivity"
     android:orientation="vertical"
-    android:background="#A9C9F8"
+    android:background="#E3ECFF"
 
     >
 
