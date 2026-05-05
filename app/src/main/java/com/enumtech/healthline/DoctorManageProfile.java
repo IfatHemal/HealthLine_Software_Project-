@@ -38,7 +38,7 @@ import java.util.Map;
 public class DoctorManageProfile extends AppCompatActivity {
 
     Spinner spinnerHospital, spinnerSpeciality;
-    EditText  etExperience;
+    EditText  etExperience, etconsultationtime, etconsultationfee, etconsultationlimit;
 
     TextView btnSave, btnback ,etName, etEmail;
     RelativeLayout btnVerification, btnActivate, btnDeactivate;
@@ -72,6 +72,9 @@ public class DoctorManageProfile extends AppCompatActivity {
         btnback   = findViewById(R.id.btnback);
         profileimage = findViewById(R.id.profileimage);
         statusbadge = findViewById(R.id.statusbadge);
+        etconsultationfee = findViewById(R.id.etconsultationfee);
+        etconsultationtime = findViewById(R.id.etconsultationtime);
+        etconsultationlimit = findViewById(R.id.etconsultationlimit);
 
 
         btnback.setOnClickListener(new View.OnClickListener() {
@@ -145,6 +148,10 @@ public class DoctorManageProfile extends AppCompatActivity {
 
                 if(selectedHospital.equals("select hospital") || selectedSpeciality.equals("select speciality")){
                     Toast.makeText(DoctorManageProfile.this,"Hospital and Speciality must be selected",Toast.LENGTH_LONG).show();
+                }
+                else if(etconsultationfee.getText().toString().isEmpty()||etconsultationtime.getText().toString().isEmpty()){
+                    Toast.makeText(DoctorManageProfile.this,"Consultation fees and time can't be empty!",Toast.LENGTH_LONG).show();
+
                 }
                 else{
                     String url ="https://ifathemalapp.com/apps/healthline/updatedoctorprofile.php";
@@ -240,6 +247,9 @@ public class DoctorManageProfile extends AppCompatActivity {
                 myMap.put("speciality", String.valueOf(selectedSpeciality));
                 myMap.put("experience", String.valueOf(experience));
                 myMap.put("activestatus",status);
+                myMap.put("consultationtime",String.valueOf(etconsultationtime.getText()));
+                myMap.put("consultationfee",String.valueOf(etconsultationfee.getText()));
+                myMap.put("consultationlimit", String.valueOf(etconsultationlimit.getText()));
 
                 return myMap;
             }

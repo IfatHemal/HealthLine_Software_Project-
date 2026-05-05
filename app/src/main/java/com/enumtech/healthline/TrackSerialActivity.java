@@ -27,6 +27,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class TrackSerialActivity extends AppCompatActivity {
 
@@ -116,6 +117,7 @@ public class TrackSerialActivity extends AppCompatActivity {
                             map.put("start_time", obj.optString("start_time"));
                             map.put("end_time", obj.optString("end_time"));
                             map.put("current", obj.optString("current_serial"));
+                            map.put("time",obj.optString("consultation_time"));
 
                             list.add(map);
                         }
@@ -171,8 +173,10 @@ public class TrackSerialActivity extends AppCompatActivity {
             ((TextView) convertView.findViewById(R.id.tvHospital)).setText(map.get("hospital").toUpperCase());
             ((TextView) convertView.findViewById(R.id.tvDate)).setText("Appointment Date: "+map.get("date"));
             ((TextView) convertView.findViewById(R.id.tvTime)).setText("Appointment Time: "+map.get("start_time")+" - "+map.get("end_time"));
-            ((TextView) convertView.findViewById(R.id.tvSerial)).setText("Serial: " + map.get("serial"));
+            ((TextView) convertView.findViewById(R.id.tvSerial)).setText("My Serial: " + map.get("serial"));
             ((TextView) convertView.findViewById(R.id.tvStatus)).setText("Status: " + map.get("status"));
+
+            TextView tvtime = convertView.findViewById(R.id.tvWaitTime);
 
             TextView tvCurrent = convertView.findViewById(R.id.tvCurrent);
 
@@ -180,8 +184,30 @@ public class TrackSerialActivity extends AppCompatActivity {
 
             if (current == null || current.equals("0")) {
                 tvCurrent.setText("Consultation didn't started yet, starts at " + map.get("start_time"));
+                tvtime.setText("Estimated wait time: not avaialable");
             } else {
-                tvCurrent.setText("Currently serving serial: " + current);
+                try {
+                    String Time = map.get("time");
+                    String serial = map.get("serial");
+
+                    if(Time != null && !Time.isEmpty() &&
+                            serial != null && !serial.isEmpty() &&
+                            current != null && !current.isEmpty()) {
+
+                        float time = Float.parseFloat(Time);
+                        float mysrl = Float.parseFloat(serial);
+                        float crntsrl = Float.parseFloat(current);
+
+                        float totaltime = (time * mysrl) - (time * crntsrl);
+
+                        tvtime.setText("Estimated wait time: ~" + totaltime + " Minutes.");
+                    }
+
+                } catch (Exception e) {
+                    tvtime.setText("Wait time not available");
+                }
+                tvCurrent.setText("Currently running serial: " + current);
+
             }
 
             return convertView;

@@ -1,6 +1,7 @@
 package com.enumtech.healthline;
 
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,6 +18,7 @@ import java.util.Calendar;
 
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -36,6 +38,9 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class BookingConfirmationActivity extends AppCompatActivity {
     TextView tvname,tvspecialitiy,tvhospital,tvfees,tvtime;
@@ -128,7 +133,27 @@ public class BookingConfirmationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                appointmentRequest();
+                AlertDialog.Builder builder = new AlertDialog.Builder(BookingConfirmationActivity.this);
+
+                builder.setTitle("Confirm Appointment");
+                builder.setMessage("Are you sure you want to take this appointment?");
+
+                builder.setCancelable(false);
+
+                builder.setPositiveButton("Yes", (dialog, which) -> {
+                    dialog.dismiss();
+                    appointmentRequest();
+
+                });
+
+                builder.setNegativeButton("No", (dialog, which) -> {
+                    dialog.dismiss();
+                });
+
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+
+
             }
         });
 
@@ -186,19 +211,57 @@ public class BookingConfirmationActivity extends AppCompatActivity {
         StringRequest request = new StringRequest(Request.Method.POST, url,
                 response -> {
 
-            if(response.contains("success")) {
+                    String status;
+                    JSONObject obj = null;
+                    try {
+                        obj = new JSONObject(response);
+                        status = obj.getString("status");
+                    } catch (JSONException e) {
+                        throw new RuntimeException(e);
+                    }
+
+
+            if(status.equals("success")) {
                 Toast.makeText(BookingConfirmationActivity.this, "Appointment Booked Successfully", Toast.LENGTH_LONG).show();
-                Log.d("APPOINTMENT", response);
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+                builder.setTitle("Appointment Confirmed");
+                builder.setMessage("You will find your appointments in your My Appointments section");
+
+                builder.setPositiveButton("OK", (dialog, which) -> {
+                    dialog.dismiss();
+                });
+
+                builder.setCancelable(false);
+
+                builder.show();
             }
-            if(response.contains("error")){
+            if(status.equals("error")){
                 Toast.makeText(BookingConfirmationActivity.this,"Input error",Toast.LENGTH_LONG).show();
 
             }
 
-            if(response.contains("errors")){
+            if(status.equals("errors")){
                         Toast.makeText(BookingConfirmationActivity.this,"Database error",Toast.LENGTH_LONG).show();
 
                     }
+            if(status.equals("over")){
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(BookingConfirmationActivity.this);
+
+                builder.setTitle("Appointment Slots Unavailable");
+                builder.setMessage("Today’s appointment slots are fully booked. Please choose the next available day.");
+
+                builder.setPositiveButton("OK", (dialog, which) -> {
+                    dialog.dismiss();
+                });
+
+                builder.setCancelable(false);
+
+                builder.show();
+
+            }
                 },
                 error -> {
                     Toast.makeText(BookingConfirmationActivity.this,"Appointment Booking Failed",Toast.LENGTH_LONG).show();
