@@ -46,6 +46,18 @@ public class LoginActivity extends AppCompatActivity {
             return insets;
         });
 
+        SharedPreferences sharedPreferences = getSharedPreferences("myApp", MODE_PRIVATE);
+
+        String email = sharedPreferences.getString("email", "");
+
+        if (!email.isEmpty()) {
+
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+
+            finish();
+
+        }
+
         tvSignup = findViewById(R.id.tvSignup);
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
