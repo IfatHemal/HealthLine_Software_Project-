@@ -1,0 +1,572 @@
+Index: build.gradle
+===================================================================
+diff --git a/build.gradle b/build.gradle
+deleted file mode 100644
+--- a/build.gradle	(revision ea82d51ec10a0ae4fda6008868b2d249d0574956)
++++ /dev/null	(revision ea82d51ec10a0ae4fda6008868b2d249d0574956)
+@@ -1,4 +0,0 @@
+-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+-plugins {
+-alias(libs.plugins.androidApplication) apply false
+-}
+\ No newline at end of file
+Index: .idea/runConfigurations.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/runConfigurations.xml b/.idea/runConfigurations.xml
+new file mode 100644
+--- /dev/null	(date 1777997938495)
++++ b/.idea/runConfigurations.xml	(date 1777997938495)
+@@ -0,0 +1,17 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="RunConfigurationProducerService">
++    <option name="ignoredProducers">
++      <set>
++        <option value="com.intellij.execution.junit.AbstractAllInDirectoryConfigurationProducer" />
++        <option value="com.intellij.execution.junit.AllInPackageConfigurationProducer" />
++        <option value="com.intellij.execution.junit.PatternConfigurationProducer" />
++        <option value="com.intellij.execution.junit.TestInClassConfigurationProducer" />
++        <option value="com.intellij.execution.junit.UniqueIdConfigurationProducer" />
++        <option value="com.intellij.execution.junit.testDiscovery.JUnitTestDiscoveryConfigurationProducer" />
++        <option value="org.jetbrains.kotlin.idea.junit.KotlinJUnitRunConfigurationProducer" />
++        <option value="org.jetbrains.kotlin.idea.junit.KotlinPatternConfigurationProducer" />
++      </set>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_17\" default=\"true\" project-jdk-name=\"jbr-17\" project-jdk-type=\"JavaSDK\">\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\n  </component>\n  <component name=\"ProjectType\">\n    <option name=\"id\" value=\"Android\" />\n  </component>\n  <component name=\"VisualizationToolProject\">\n    <option name=\"state\">\n      <ProjectState>\n        <option name=\"scale\" value=\"0.75\" />\n      </ProjectState>\n    </option>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision ea82d51ec10a0ae4fda6008868b2d249d0574956)
++++ b/.idea/misc.xml	(date 1777997938495)
+@@ -1,4 +1,3 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ExternalStorageConfigurationManager" enabled="true" />
+   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+Index: .idea/.name
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.name b/.idea/.name
+new file mode 100644
+--- /dev/null	(date 1777997938491)
++++ b/.idea/.name	(date 1777997938491)
+@@ -0,0 +1,1 @@
++HealthLine
+\ No newline at end of file
+Index: .idea/deviceManager.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/deviceManager.xml b/.idea/deviceManager.xml
+new file mode 100644
+--- /dev/null	(date 1777997938493)
++++ b/.idea/deviceManager.xml	(date 1777997938493)
+@@ -0,0 +1,13 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="DeviceTable">
++    <option name="columnSorters">
++      <list>
++        <ColumnSorterState>
++          <option name="column" value="Name" />
++          <option name="order" value="ASCENDING" />
++        </ColumnSorterState>
++      </list>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"GradleMigrationSettings\" migrationVersion=\"1\" />\n  <component name=\"GradleSettings\">\n    <option name=\"linkedExternalProjectsSettings\">\n      <GradleProjectSettings>\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\n        <option name=\"gradleJvm\" value=\"#GRADLE_LOCAL_JAVA_HOME\" />\n        <option name=\"modules\">\n          <set>\n            <option value=\"$PROJECT_DIR$\" />\n            <option value=\"$PROJECT_DIR$/app\" />\n          </set>\n        </option>\n        <option name=\"resolveExternalAnnotations\" value=\"false\" />\n      </GradleProjectSettings>\n    </option>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+--- a/.idea/gradle.xml	(revision ea82d51ec10a0ae4fda6008868b2d249d0574956)
++++ b/.idea/gradle.xml	(date 1777997938494)
+@@ -4,15 +4,15 @@
+   <component name="GradleSettings">
+     <option name="linkedExternalProjectsSettings">
+       <GradleProjectSettings>
++        <option name="testRunner" value="CHOOSE_PER_TEST" />
+         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+-        <option name="gradleJvm" value="#GRADLE_LOCAL_JAVA_HOME" />
++        <option name="gradleJvm" value="jbr-17" />
+         <option name="modules">
+           <set>
+             <option value="$PROJECT_DIR$" />
+             <option value="$PROJECT_DIR$/app" />
+           </set>
+         </option>
+-        <option name="resolveExternalAnnotations" value="false" />
+       </GradleProjectSettings>
+     </option>
+   </component>
+Index: .idea/deploymentTargetSelector.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/deploymentTargetSelector.xml b/.idea/deploymentTargetSelector.xml
+new file mode 100644
+--- /dev/null	(date 1777997938492)
++++ b/.idea/deploymentTargetSelector.xml	(date 1777997938492)
+@@ -0,0 +1,29 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="deploymentTargetSelector">
++    <selectionStates>
++      <SelectionState runConfigName="app">
++        <option name="selectionMode" value="DROPDOWN" />
++        <DropdownSelection timestamp="2026-04-28T20:32:50.347133800Z">
++          <Target type="DEFAULT_BOOT">
++            <handle>
++              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\Arpon Chowdhury\.android\avd\Pixel_4.avd" />
++            </handle>
++          </Target>
++        </DropdownSelection>
++        <DialogSelection />
++      </SelectionState>
++      <SelectionState runConfigName="LoginTest">
++        <option name="selectionMode" value="DROPDOWN" />
++        <DropdownSelection timestamp="2026-04-28T20:32:50.347133800Z">
++          <Target type="DEFAULT_BOOT">
++            <handle>
++              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\Arpon Chowdhury\.android\avd\Pixel_4.avd" />
++            </handle>
++          </Target>
++        </DropdownSelection>
++        <DialogSelection />
++      </SelectionState>
++    </selectionStates>
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/androidTest/java/com/enumtech/healthline/LoginTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/androidTest/java/com/enumtech/healthline/LoginTest.java b/app/src/androidTest/java/com/enumtech/healthline/LoginTest.java
+new file mode 100644
+--- /dev/null	(date 1777997938496)
++++ b/app/src/androidTest/java/com/enumtech/healthline/LoginTest.java	(date 1777997938496)
+@@ -0,0 +1,57 @@
++package com.enumtech.healthline;
++
++import androidx.test.ext.junit.rules.ActivityScenarioRule;
++import androidx.test.ext.junit.runners.AndroidJUnit4;
++
++import org.junit.Rule;
++import org.junit.Test;
++import org.junit.runner.RunWith;
++
++import static androidx.test.espresso.Espresso.onView;
++import static androidx.test.espresso.matcher.ViewMatchers.withId;
++import static androidx.test.espresso.action.ViewActions.*;
++
++@RunWith(AndroidJUnit4.class)
++public class LoginTest {
++
++    @Rule
++    public ActivityScenarioRule<LoginActivity> activityRule =
++            new ActivityScenarioRule<>(LoginActivity.class);
++
++    @Test
++    public void testLoginButtonClick() {
++
++        try {
++            Thread.sleep(4000); // UI load wait
++        } catch (InterruptedException e) {
++            e.printStackTrace();
++        }
++
++        onView(withId(R.id.etEmail))
++                .perform(click(), typeText("test@gmail.com"), closeSoftKeyboard());
++
++        try {
++            Thread.sleep(1000);
++        } catch (InterruptedException e) {
++            e.printStackTrace();
++        }
++
++        onView(withId(R.id.etPassword))
++                .perform(click(), typeText("123456"), closeSoftKeyboard());
++
++        try {
++            Thread.sleep(1000);
++        } catch (InterruptedException e) {
++            e.printStackTrace();
++        }
++
++        onView(withId(R.id.btnLogin))
++                .perform(click());
++
++        try {
++            Thread.sleep(2000);
++        } catch (InterruptedException e) {
++            e.printStackTrace();
++        }
++    }
++}
+\ No newline at end of file
+Index: .idea/markdown.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/markdown.xml b/.idea/markdown.xml
+new file mode 100644
+--- /dev/null	(date 1777997938494)
++++ b/.idea/markdown.xml	(date 1777997938494)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="MarkdownSettings">
++    <option name="previewPanelProviderInfo">
++      <ProviderInfo name="Compose (experimental)" className="com.intellij.markdown.compose.preview.ComposePanelProvider" />
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/test/java/com/enumtech/healthline/ExampleUnitTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.enumtech.healthline;\n\nimport org.junit.Test;\n\nimport static org.junit.Assert.*;\n\n/**\n * Example local unit test, which will execute on the development machine (host).\n *\n * @see <a href=\"http://d.android.com/tools/testing\">Testing documentation</a>\n */\npublic class ExampleUnitTest {\n    @Test\n    public void addition_isCorrect() {\n        assertEquals(4, 2 + 2);\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/test/java/com/enumtech/healthline/ExampleUnitTest.java b/app/src/test/java/com/enumtech/healthline/ExampleUnitTest.java
+--- a/app/src/test/java/com/enumtech/healthline/ExampleUnitTest.java	(revision ea82d51ec10a0ae4fda6008868b2d249d0574956)
++++ b/app/src/test/java/com/enumtech/healthline/ExampleUnitTest.java	(date 1777997938498)
+@@ -14,4 +14,71 @@
+     public void addition_isCorrect() {
+         assertEquals(4, 2 + 2);
+     }
+-}
+\ No newline at end of file
++
++    @Test
++    public void testSignupValidation() {
++        String email = "user@gmail.com";
++        String password = "123456";
++
++        assertFalse(email.isEmpty());
++        assertTrue(password.length() >= 6);
++    }
++    @Test
++    public void testLoginValidation() {
++        String email = "user@gmail.com";
++        String password = "123456";
++
++        assertFalse(email.isEmpty());
++        assertTrue(password.length() >= 6);
++    }
++    @Test
++    public void testAppointmentValid() {
++        String date = "2026-04-25";
++        String time = "10:00 AM";
++
++        assertFalse(date.isEmpty());
++        assertFalse(time.isEmpty());
++    }
++    @Test
++    public void testAppointmentInvalid() {
++        String date = "";
++        String time = "";
++
++        assertTrue(date.isEmpty());
++        assertTrue(time.isEmpty());
++    }
++    @Test
++    public void testScheduleValid() {
++        String date = "2026-04-25";
++        String time = "10:00 AM";
++        String doctor = "Dr. Ahmed";
++
++        assertFalse(date.isEmpty());
++        assertFalse(time.isEmpty());
++        assertFalse(doctor.isEmpty());
++    }
++    @Test
++    public void testScheduleInvalid() {
++        String date = "";
++        String time = "";
++        String doctor = "";
++
++        assertTrue(date.isEmpty());
++        assertTrue(time.isEmpty());
++        assertTrue(doctor.isEmpty());
++    }
++    @Test
++    public void testInvalidTime() {
++        String time = "25:00";
++
++        boolean isValid = time.matches("^(0[1-9]|1[0-2]):[0-5][0-9] (AM|PM)$");
++        assertFalse(isValid);
++    }
++    @Test
++    public void testDuplicateSchedule() {
++        String slot1 = "2026-04-25 10:00 AM";
++        String slot2 = "2026-04-25 10:00 AM";
++
++        assertEquals(slot1, slot2);
++    }
++}
+Index: .idea/androidTestResultsUserPreferences.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/androidTestResultsUserPreferences.xml b/.idea/androidTestResultsUserPreferences.xml
+new file mode 100644
+--- /dev/null	(date 1777997938492)
++++ b/.idea/androidTestResultsUserPreferences.xml	(date 1777997938492)
+@@ -0,0 +1,87 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="AndroidTestResultsUserPreferences">
++    <option name="androidTestResultsTableState">
++      <map>
++        <entry key="-1911421363">
++          <value>
++            <AndroidTestResultsTableState>
++              <option name="preferredColumnWidths">
++                <map>
++                  <entry key="Duration" value="90" />
++                  <entry key="Tests" value="360" />
++                  <entry key="Xiaomi 2201117TI" value="120" />
++                </map>
++              </option>
++            </AndroidTestResultsTableState>
++          </value>
++        </entry>
++        <entry key="-119969043">
++          <value>
++            <AndroidTestResultsTableState>
++              <option name="preferredColumnWidths">
++                <map>
++                  <entry key="Duration" value="90" />
++                  <entry key="Tests" value="360" />
++                  <entry key="Xiaomi 2201117TI" value="120" />
++                </map>
++              </option>
++            </AndroidTestResultsTableState>
++          </value>
++        </entry>
++        <entry key="273198088">
++          <value>
++            <AndroidTestResultsTableState>
++              <option name="preferredColumnWidths">
++                <map>
++                  <entry key="Duration" value="90" />
++                  <entry key="Tests" value="360" />
++                  <entry key="Xiaomi 2201117TI" value="120" />
++                </map>
++              </option>
++            </AndroidTestResultsTableState>
++          </value>
++        </entry>
++        <entry key="762088155">
++          <value>
++            <AndroidTestResultsTableState>
++              <option name="preferredColumnWidths">
++                <map>
++                  <entry key="Duration" value="90" />
++                  <entry key="Tests" value="360" />
++                  <entry key="Xiaomi 2201117TI" value="120" />
++                </map>
++              </option>
++            </AndroidTestResultsTableState>
++          </value>
++        </entry>
++        <entry key="876284772">
++          <value>
++            <AndroidTestResultsTableState>
++              <option name="preferredColumnWidths">
++                <map>
++                  <entry key="Duration" value="90" />
++                  <entry key="Tests" value="360" />
++                  <entry key="Xiaomi 2201117TI" value="120" />
++                </map>
++              </option>
++            </AndroidTestResultsTableState>
++          </value>
++        </entry>
++        <entry key="1346152832">
++          <value>
++            <AndroidTestResultsTableState>
++              <option name="preferredColumnWidths">
++                <map>
++                  <entry key="Duration" value="90" />
++                  <entry key="Tests" value="360" />
++                  <entry key="Xiaomi 2201117TI" value="120" />
++                </map>
++              </option>
++            </AndroidTestResultsTableState>
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_login.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<ScrollView xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\"\n    xmlns:tools=\"http://schemas.android.com/tools\"\n    android:background=\"#E9EEF8\"\n    android:padding=\"20dp\"\n    android:id=\"@+id/login\"\n    tools:context=\".LoginActivity\">\n    <LinearLayout\n        android:layout_width=\"match_parent\"\n        android:layout_height=\"wrap_content\"\n        android:orientation=\"vertical\"\n        >\n\n\n\n    <LinearLayout\n        android:layout_width=\"match_parent\"\n        android:layout_height=\"120dp\"\n        android:orientation=\"vertical\" />\n\n\n    <LinearLayout\n        android:layout_width=\"match_parent\"\n        android:layout_height=\"wrap_content\"\n        android:orientation=\"vertical\"\n        android:gravity=\"center_horizontal\"\n        >\n\n        <LinearLayout\n            android:layout_width=\"match_parent\"\n            android:layout_height=\"wrap_content\"\n            android:orientation=\"horizontal\"\n            android:gravity=\"center_horizontal\"\n\n            >\n            <ImageView\n                android:layout_width=\"50dp\"\n                android:layout_height=\"50dp\"\n                android:src=\"@drawable/healthline_logo\"\n                />\n            <TextView\n                android:layout_width=\"wrap_content\"\n                android:layout_height=\"wrap_content\"\n                android:text=\"HealthLine\"\n                android:textColor=\"#2563EB\"\n                android:textStyle=\"bold\"\n                android:textSize=\"38sp\"\n\n                />\n\n        </LinearLayout>\n\n\n\n        <TextView\n            android:layout_width=\"wrap_content\"\n            android:layout_height=\"wrap_content\"\n            android:layout_marginTop=\"8dp\"\n            android:text=\"Login to your account\"\n            android:textColor=\"#4B5563\"\n            android:textSize=\"18sp\" />\n    </LinearLayout>\n\n\n    <LinearLayout\n        android:layout_width=\"match_parent\"\n        android:layout_height=\"wrap_content\"\n        android:layout_marginTop=\"40dp\"\n\n        android:background=\"@drawable/bg_card\"\n        android:orientation=\"vertical\"\n        android:padding=\"20dp\"\n        android:layout_marginStart=\"20dp\"\n        android:layout_marginEnd=\"20dp\"\n        >\n\n\n        <TextView\n            android:layout_width=\"wrap_content\"\n            android:layout_height=\"wrap_content\"\n            android:layout_marginTop=\"20dp\"\n            android:text=\"Email Address\"\n            android:textStyle=\"bold\"\n            android:textColor=\"#374151\"\n            android:textSize=\"16sp\" />\n\n        <LinearLayout\n            android:layout_width=\"match_parent\"\n            android:layout_height=\"54dp\"\n            android:orientation=\"horizontal\"\n            android:background=\"@drawable/bg_input_field\"\n            >\n\n            <ImageView\n                android:id=\"@+id/iconEmail\"\n                android:layout_width=\"30dp\"\n                android:layout_height=\"wrap_content\"\n                android:src=\"@drawable/email_icon\"\n                android:layout_marginStart=\"14dp\"\n                android:layout_gravity=\"center\"\n                />\n\n        <EditText\n            android:id=\"@+id/etEmail\"\n            android:layout_width=\"match_parent\"\n            android:layout_height=\"54dp\"\n            android:background=\"@null\"\n            android:gravity=\"center_vertical\"\n            android:hint=\"Enter your email\"\n            android:padding=\"16dp\"\n            android:inputType=\"textEmailAddress\"\n            android:textColor=\"#111827\"\n\n            />\n        </LinearLayout>\n\n        <TextView\n            android:layout_width=\"wrap_content\"\n            android:layout_height=\"wrap_content\"\n            android:layout_marginTop=\"20dp\"\n            android:text=\"Password\"\n            android:textStyle=\"bold\"\n            android:textColor=\"#374151\"\n            android:textSize=\"16sp\" />\n\n        <LinearLayout\n            android:layout_width=\"match_parent\"\n            android:layout_height=\"54dp\"\n            android:orientation=\"horizontal\"\n            android:background=\"@drawable/bg_input_field\"\n            >\n\n            <ImageView\n                android:id=\"@+id/iconPass\"\n                android:layout_width=\"30dp\"\n                android:layout_height=\"wrap_content\"\n                android:src=\"@drawable/lock_icon\"\n                android:layout_marginStart=\"14dp\"\n                android:layout_gravity=\"center\"\n                />\n\n        <EditText\n            android:id=\"@+id/etPassword\"\n            android:layout_width=\"match_parent\"\n            android:layout_height=\"54dp\"\n            android:background=\"@null\"\n            android:hint=\"Enter your password\"\n            android:padding=\"16dp\"\n            android:inputType=\"textPassword\"\n            android:textColor=\"#111827\"\n            />\n\n        </LinearLayout>\n\n\n        <LinearLayout\n            android:layout_width=\"match_parent\"\n            android:layout_height=\"wrap_content\"\n            android:layout_marginTop=\"18dp\"\n            android:orientation=\"horizontal\"\n            android:weightSum=\"2\">\n\n            <CheckBox\n                android:layout_width=\"match_parent\"\n                android:layout_height=\"wrap_content\"\n                android:text=\"Remember me\"\n                android:textStyle=\"bold\"\n                android:textColor=\"#4B5563\"\n                android:layout_weight=\"1\"/>\n\n            <TextView\n                android:layout_width=\"match_parent\"\n                android:layout_height=\"wrap_content\"\n                android:text=\"Forgot password?\"\n                android:paddingStart=\"10dp\"\n                android:textColor=\"#2563EB\"\n                android:textStyle=\"bold\"\n                android:layout_weight=\"1\"/>\n        </LinearLayout>\n\n\n        <Button\n            android:id=\"@+id/btnLogin\"\n            android:layout_width=\"match_parent\"\n            android:layout_height=\"54dp\"\n            android:layout_marginTop=\"24dp\"\n            android:backgroundTint=\"#2C4EB3\"\n            android:text=\"Login\"\n            android:textColor=\"#FFFFFF\"\n            android:textSize=\"18sp\"\n            android:textStyle=\"bold\" />\n\n\n        <LinearLayout\n            android:layout_width=\"wrap_content\"\n            android:layout_height=\"wrap_content\"\n            android:layout_gravity=\"center_horizontal\"\n            android:layout_marginTop=\"30dp\"\n            android:orientation=\"horizontal\">\n\n            <TextView\n                android:layout_width=\"wrap_content\"\n                android:layout_height=\"wrap_content\"\n                android:text=\"Don't have an account? \"\n                android:textColor=\"#4B5563\"\n                android:textSize=\"16sp\" />\n\n            <TextView\n                android:id=\"@+id/tvSignup\"\n                android:layout_width=\"wrap_content\"\n                android:layout_height=\"wrap_content\"\n                android:clickable=\"true\"\n                android:text=\"Sign up\"\n                android:textColor=\"#2563EB\"\n                android:textSize=\"16sp\"\n                android:textStyle=\"bold\" />\n        </LinearLayout>\n\n    </LinearLayout>\n    </LinearLayout>\n\n</ScrollView>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_login.xml b/app/src/main/res/layout/activity_login.xml
+--- a/app/src/main/res/layout/activity_login.xml	(revision ea82d51ec10a0ae4fda6008868b2d249d0574956)
++++ b/app/src/main/res/layout/activity_login.xml	(date 1777997938497)
+@@ -53,7 +53,6 @@
+         </LinearLayout>
+ 
+ 
+-
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:tools=\"http://schemas.android.com/tools\">\n\n    <uses-feature\n        android:name=\"android.hardware.camera\"\n        android:required=\"false\" />\n\n    <uses-permission android:name=\"android.permission.INTERNET\" />\n    <uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />\n    <uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />\n    <uses-permission android:name=\"android.permission.CAMERA\" />\n\n    <application\n        android:allowBackup=\"true\"\n        android:dataExtractionRules=\"@xml/data_extraction_rules\"\n        android:fullBackupContent=\"@xml/backup_rules\"\n        android:icon=\"@drawable/healthline_logo\"\n        android:label=\"@string/app_name\"\n        android:roundIcon=\"@drawable/healthline_logo\"\n        android:supportsRtl=\"true\"\n        android:theme=\"@style/Theme.HealthLine\"\n        tools:targetApi=\"31\">\n        <activity\n            android:name=\".BloodDonorList\"\n            android:exported=\"false\" />\n        <activity\n            android:name=\".BloodDonorManageProfile\"\n            android:exported=\"false\" />\n        <activity\n            android:name=\".TrackSerialActivity\"\n            android:exported=\"false\" />\n        <activity\n            android:name=\".UpdateSerialActivity\"\n            android:exported=\"false\" />\n        <activity\n            android:name=\".MyAppointmentActivity\"\n            android:exported=\"false\" />\n        <activity\n            android:name=\".BookingConfirmationActivity\"\n            android:exported=\"false\" />\n        <activity\n            android:name=\".BookDoctorAppointment\"\n            android:exported=\"false\" />\n        <activity\n            android:name=\".DoctorScheduleManagement\"\n            android:exported=\"false\" />\n        <activity\n            android:name=\".DoctorManageProfile\"\n            android:exported=\"false\" />\n        <activity\n            android:name=\".LoginActivity\"\n            android:exported=\"false\"\n            android:windowSoftInputMode=\"adjustResize\" />\n        <activity\n            android:name=\".RegisterActivity\"\n            android:exported=\"false\" />\n        <activity\n            android:name=\".MainActivity\"\n            android:exported=\"true\"\n            android:windowSoftInputMode=\"adjustResize\">\n            <intent-filter>\n                <action android:name=\"android.intent.action.MAIN\" />\n\n                <category android:name=\"android.intent.category.LAUNCHER\" />\n            </intent-filter>\n        </activity>\n    </application>\n\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(revision ea82d51ec10a0ae4fda6008868b2d249d0574956)
++++ b/app/src/main/AndroidManifest.xml	(date 1777997938496)
+@@ -1,70 +1,27 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:tools="http://schemas.android.com/tools">
+-
+-    <uses-feature
+-        android:name="android.hardware.camera"
+-        android:required="false" />
+-
+-    <uses-permission android:name="android.permission.INTERNET" />
+-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+-    <uses-permission android:name="android.permission.CAMERA" />
++    package="com.enumtech.healthline">
+ 
+     <application
+         android:allowBackup="true"
+-        android:dataExtractionRules="@xml/data_extraction_rules"
+-        android:fullBackupContent="@xml/backup_rules"
+-        android:icon="@drawable/healthline_logo"
+-        android:label="@string/app_name"
+-        android:roundIcon="@drawable/healthline_logo"
++        android:label="HealthLine"
+         android:supportsRtl="true"
+-        android:theme="@style/Theme.HealthLine"
+-        tools:targetApi="31">
+-        <activity
+-            android:name=".BloodDonorList"
+-            android:exported="false" />
+-        <activity
+-            android:name=".BloodDonorManageProfile"
+-            android:exported="false" />
+-        <activity
+-            android:name=".TrackSerialActivity"
+-            android:exported="false" />
+-        <activity
+-            android:name=".UpdateSerialActivity"
+-            android:exported="false" />
+-        <activity
+-            android:name=".MyAppointmentActivity"
+-            android:exported="false" />
+-        <activity
+-            android:name=".BookingConfirmationActivity"
+-            android:exported="false" />
+-        <activity
+-            android:name=".BookDoctorAppointment"
+-            android:exported="false" />
+-        <activity
+-            android:name=".DoctorScheduleManagement"
+-            android:exported="false" />
+-        <activity
+-            android:name=".DoctorManageProfile"
++        android:theme="@style/Theme.HealthLine">
++
++        <activity android:name=".MainActivity"
+             android:exported="false" />
++
+         <activity
+             android:name=".LoginActivity"
+-            android:exported="false"
+-            android:windowSoftInputMode="adjustResize" />
+-        <activity
+-            android:name=".RegisterActivity"
+-            android:exported="false" />
+-        <activity
+-            android:name=".MainActivity"
+-            android:exported="true"
+-            android:windowSoftInputMode="adjustResize">
++            android:exported="true">
++
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+-
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
++
+         </activity>
++
+     </application>
+ 
+ </manifest>
+\ No newline at end of file
+Index: .idea/AndroidProjectSystem.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/AndroidProjectSystem.xml b/.idea/AndroidProjectSystem.xml
+new file mode 100644
+--- /dev/null	(date 1777997938492)
++++ b/.idea/AndroidProjectSystem.xml	(date 1777997938492)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="AndroidProjectSystem">
++    <option name="providerId" value="com.android.tools.idea.GradleProjectSystem" />
++  </component>
++</project>
+\ No newline at end of file
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\n    alias(libs.plugins.androidApplication)\n}\n\nandroid {\n    namespace 'com.enumtech.healthline'\n    compileSdk 34\n\n    defaultConfig {\n        applicationId \"com.enumtech.healthline\"\n        minSdk 29\n        targetSdk 34\n        versionCode 1\n        versionName \"1.0\"\n\n        testInstrumentationRunner \"androidx.test.runner.AndroidJUnitRunner\"\n    }\n\n    buildTypes {\n        release {\n            minifyEnabled true\n            shrinkResources true\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\n        }\n    }\n    compileOptions {\n        sourceCompatibility JavaVersion.VERSION_1_8\n        targetCompatibility JavaVersion.VERSION_1_8\n    }\n}\n\ndependencies {\n\n    implementation libs.appcompat\n    implementation libs.material\n    implementation libs.activity\n    implementation libs.constraintlayout\n    testImplementation libs.junit\n    androidTestImplementation libs.ext.junit\n    androidTestImplementation libs.espresso.core\n    implementation 'com.android.volley:volley:1.2.1'\n    implementation 'com.google.android.material:material:1.11.0'\n    implementation 'com.github.dhaval2404:imagepicker:2.1'\n    implementation 'com.squareup.picasso:picasso:2.8'\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle b/app/build.gradle
+--- a/app/build.gradle	(revision ea82d51ec10a0ae4fda6008868b2d249d0574956)
++++ b/app/build.gradle	(date 1777997938495)
+@@ -42,4 +42,5 @@
+     implementation 'com.google.android.material:material:1.11.0'
+     implementation 'com.github.dhaval2404:imagepicker:2.1'
+     implementation 'com.squareup.picasso:picasso:2.8'
++    testImplementation 'junit:junit:4.13.2'
+ }
+\ No newline at end of file
