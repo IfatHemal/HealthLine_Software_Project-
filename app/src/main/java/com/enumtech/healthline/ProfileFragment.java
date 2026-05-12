@@ -1,5 +1,8 @@
 package com.enumtech.healthline;
 
+import android.widget.Switch;
+import androidx.appcompat.app.AppCompatDelegate;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -68,6 +71,7 @@ public class ProfileFragment extends Fragment {
 
 
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -87,6 +91,34 @@ public class ProfileFragment extends Fragment {
         profileimage = profileview.findViewById(R.id.profileimage);
         editimage = profileview.findViewById(R.id.editimage);
 
+        Switch switchDarkMode = profileview.findViewById(R.id.switchDarkMode);
+
+        SharedPreferences darkPrefs = requireActivity().getSharedPreferences("DarkMode", Context.MODE_PRIVATE);
+
+        boolean isDarkMode = darkPrefs.getBoolean("dark_mode", false);
+        switchDarkMode.setChecked(isDarkMode);
+
+        if (isDarkMode) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
+
+        switchDarkMode.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            SharedPreferences.Editor editorDark = darkPrefs.edit();
+            editorDark.putBoolean("dark_mode", isChecked);
+            editorDark.apply();
+
+            if (isChecked) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            }
+
+            requireActivity().recreate();
+        });
+
+
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("myApp", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         String name = (sharedPreferences.getString("name",""));
@@ -94,7 +126,9 @@ public class ProfileFragment extends Fragment {
         String role = (sharedPreferences.getString("role",""));
         String image = sharedPreferences.getString("image","");
         userid = sharedPreferences.getString("id","");
-         role = role.substring(0,1).toUpperCase()+role.substring(1).toLowerCase();
+        if (role != null && role.length() > 0) {
+            role = role.substring(0,1).toUpperCase() + role.substring(1).toLowerCase();
+        }
 
         tvname.setText(name);
         tvemail.setText(email);
@@ -161,17 +195,22 @@ public class ProfileFragment extends Fragment {
         savePhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (profileimage.getDrawable() != null) {
 
-                BitmapDrawable bitmapDrawable = (BitmapDrawable) profileimage.getDrawable();
-                Bitmap bitmap = bitmapDrawable.getBitmap();
+                    BitmapDrawable bitmapDrawable = (BitmapDrawable) profileimage.getDrawable();
+                    Bitmap bitmap = bitmapDrawable.getBitmap();
 
-                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-                bitmap.compress(Bitmap.CompressFormat.JPEG, 30, outputStream);
+                    ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 30, outputStream);
 
-                byte[] imageBytes = outputStream.toByteArray();
-                String image64 = Base64.encodeToString(imageBytes,Base64.DEFAULT);
+                    byte[] imageBytes = outputStream.toByteArray();
+                    String image64 = Base64.encodeToString(imageBytes, Base64.DEFAULT);
 
-                StringRequest(image64);
+                    StringRequest(image64);
+
+                } else {
+                    Toast.makeText(getActivity(), "No image selected", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -217,7 +256,7 @@ public class ProfileFragment extends Fragment {
                     public void onClick(View v) {
                         String updatename = editname.getText().toString();
                         String updateemail = editemail.getText().toString();
-                        if (updateemail.isEmpty() || updateemail.isEmpty()) {
+                        if (updatename.isEmpty() || updateemail.isEmpty()) {
                             Toast.makeText(getActivity(), "Name or email can't be null.", Toast.LENGTH_LONG).show();
                         } else {
                             String url = "https://ifathemalapp.com/apps/healthline/updateprofile.php";
