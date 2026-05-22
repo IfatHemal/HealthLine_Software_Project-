@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@drawable/bg_card_white"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        >
+
+
+        <TextView
+            android:id="@+id/tvname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reviewed By: Elon Musk"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_weight="1"
+            />
+        <TextView
+            android:id="@+id/tvrating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rating: 4.5 ⭐️"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            />
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date:12/04/2026"
+        android:textColor="#5B5B5B"
+        android:textSize="14sp"
+        />
+
+    <TextView
+        android:id="@+id/tvreview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="He is a very good doctor. His behaviour with his patients is praisworthy."
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:textStyle="italic"
+        />
+
+
+
+
+
+</LinearLayout>
