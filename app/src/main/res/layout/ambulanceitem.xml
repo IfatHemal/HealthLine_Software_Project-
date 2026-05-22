@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="15dp"
+    android:background="@drawable/bg_card"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="🚑"
+            android:textSize="50dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+            <TextView
+                android:id="@+id/tvambulancename"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="City Emergency Ambulance"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_gravity="clip_vertical"
+                />
+            <TextView
+                android:id="@+id/tvambulancelicence"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Licence No. DC-22-5432"
+                android:layout_marginLeft="10dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#015495"
+                android:layout_gravity="clip_vertical"
+                />
+
+            <TextView
+                android:id="@+id/tvambulancetype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ICU Equipped"
+                android:layout_marginLeft="10dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#018BF8"
+                android:layout_gravity="clip_vertical"
+                />
+
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvdrivername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="👤   Shah Arpon"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+
+        />
+
+
+    <TextView
+        android:id="@+id/tvlocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🌍   Dhaka - Mirpur"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="5dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+
+        />
+
+
+    <Button
+        android:id="@+id/btnRequest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Request"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:backgroundTint="#0288F1"
+        />
+
+
+
+</LinearLayout>
