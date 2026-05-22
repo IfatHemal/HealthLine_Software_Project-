@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HealthLine">
         <activity
+            android:name=".AmbulanceManageRequestActivity"
+            android:exported="false" />
+        <activity
             android:name=".BookAmbulanceActivity"
             android:exported="false" />
         <activity
