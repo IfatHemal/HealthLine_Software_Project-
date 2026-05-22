@@ -620,6 +620,7 @@ tools:context=".DoctorManageProfile">
                     android:layout_centerInParent="true">
 
                     <TextView
+                        android:id="@+id/tvverification"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Request Profile Verification"

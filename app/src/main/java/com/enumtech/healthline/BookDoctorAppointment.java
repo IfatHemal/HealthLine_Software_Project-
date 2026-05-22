@@ -234,7 +234,7 @@ public class BookDoctorAppointment extends AppCompatActivity {
                 holder.schedule = convertView.findViewById(R.id.tvSchedule);
                 holder.fee = convertView.findViewById(R.id.tvFee);
                 holder.experience = convertView.findViewById(R.id.tvExperience);
-                holder.rating = convertView.findViewById(R.id.tvRating);
+
                 holder.imgDoctor = convertView.findViewById(R.id.imgDoctor);
                 holder.book = convertView.findViewById(R.id.book);
                 holder.review = convertView.findViewById(R.id.review);
@@ -265,7 +265,7 @@ public class BookDoctorAppointment extends AppCompatActivity {
             holder.schedule.setText(model.get("schedule"));
             holder.fee.setText("Fee: " + model.get("fees") +" Taka");
             holder.experience.setText("Experience: " + model.get("experience") + " Years");
-            holder.rating.setText("⭐ " + model.get("rating"));
+            
 
 
             holder.book.setOnClickListener(new View.OnClickListener() {
@@ -280,6 +280,15 @@ public class BookDoctorAppointment extends AppCompatActivity {
                     BookingConfirmationActivity.fees = model.get("fees");
                     BookingConfirmationActivity.time = model.get("time");
                     startActivity(new Intent(BookDoctorAppointment.this,BookingConfirmationActivity.class));
+                }
+            });
+
+            holder.review.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ViewReviewActivity.doctorid = model.get("doctorid");
+                    ViewReviewActivity.doctorName = doctorname;
+                    startActivity(new Intent(BookDoctorAppointment.this,ViewReviewActivity.class));
                 }
             });
 

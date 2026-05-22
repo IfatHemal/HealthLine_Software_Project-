@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".HomeFragment"
     android:orientation="vertical"
-    android:background="?android:colorBackground"
+    android:background="#D1F1FD"
     android:fillViewport="true"
     >
 
@@ -555,6 +555,7 @@
 
 
                 <LinearLayout
+                    android:id="@+id/bookambulance"
                     android:layout_width="0dp"
                     android:layout_height="120dp"
                     android:layout_weight="1"
@@ -589,20 +590,69 @@
 
 
                 <LinearLayout
+                    android:id="@+id/myambulancerequest"
                     android:layout_width="0dp"
                     android:layout_height="120dp"
+                    android:layout_marginStart="7dp"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center"
                     android:background="@drawable/bg_card_white"
-                    android:layout_marginStart="7dp">
+                    android:gravity="center"
+                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="54dp"
                         android:layout_height="54dp"
-                        android:gravity="center"
+                        android:layout_marginBottom="10dp"
                         android:background="@drawable/bg_icon_box_yellow"
-                        android:layout_marginBottom="10dp">
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🚨"
+                            android:textSize="24sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="My Ambulance Request"
+                        android:textColor="#111827"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="50dp">
+
+
+
+
+                <LinearLayout
+                    android:id="@+id/givereview"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_marginStart="7dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_card_white"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/bg_icon_box_yellow"
+                        android:gravity="center">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -614,14 +664,19 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:gravity="center"
                         android:text="Give Review"
-                        android:textSize="13sp"
                         android:textColor="#111827"
-                        android:textStyle="bold"
-                        android:gravity="center" />
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
             </LinearLayout>
+
+
+
+
+
 
         </LinearLayout>
 

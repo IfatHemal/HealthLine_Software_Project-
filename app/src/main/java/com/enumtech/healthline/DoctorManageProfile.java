@@ -24,6 +24,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -32,15 +33,17 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.squareup.picasso.Picasso;
 
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class DoctorManageProfile extends AppCompatActivity {
 
     Spinner spinnerHospital, spinnerSpeciality;
-    EditText  etExperience, etconsultationtime, etconsultationfee, etconsultationlimit;
+    EditText  etExperience, etconsultationtime, etconsultationfee, etconsultationlimit, etbmdc;
 
-    TextView btnSave, btnback ,etName, etEmail;
+    TextView btnSave, btnback ,etName, etEmail, tvverification;
     RelativeLayout btnVerification, btnActivate, btnDeactivate;
     TextView tvStatusBadge;
     ImageView profileimage;
@@ -75,6 +78,8 @@ public class DoctorManageProfile extends AppCompatActivity {
         etconsultationfee = findViewById(R.id.etconsultationfee);
         etconsultationtime = findViewById(R.id.etconsultationtime);
         etconsultationlimit = findViewById(R.id.etconsultationlimit);
+        tvverification = findViewById(R.id.tvverification);
+        etbmdc = findViewById(R.id.etBmdcRegNo);
 
 
         btnback.setOnClickListener(new View.OnClickListener() {
@@ -150,7 +155,24 @@ public class DoctorManageProfile extends AppCompatActivity {
                     Toast.makeText(DoctorManageProfile.this,"Hospital and Speciality must be selected",Toast.LENGTH_LONG).show();
                 }
                 else if(etconsultationfee.getText().toString().isEmpty()||etconsultationtime.getText().toString().isEmpty()){
+                    etconsultationfee.setError("Can't be empty!");
+                    etconsultationtime.setError("Can't be empty!");
                     Toast.makeText(DoctorManageProfile.this,"Consultation fees and time can't be empty!",Toast.LENGTH_LONG).show();
+
+                }
+                else if(etconsultationlimit.getText().toString().isEmpty()){
+                    etconsultationlimit.setError("Can't be empty!");
+                    Toast.makeText(DoctorManageProfile.this,"Per day max consultation limit must be given ",Toast.LENGTH_LONG).show();
+
+                }
+                else if(etbmdc.getText().toString().isEmpty()){
+                    etbmdc.setError("Can't be empty!");
+                    Toast.makeText(DoctorManageProfile.this,"BMDC Reg. No. must be given ",Toast.LENGTH_LONG).show();
+
+                }
+                else if(etExperience.getText().toString().isEmpty()){
+                    etExperience.setError("Can't be empty!");
+                    Toast.makeText(DoctorManageProfile.this,"Don't have experience, then enter 0 ",Toast.LENGTH_LONG).show();
 
                 }
                 else{
@@ -174,8 +196,7 @@ public class DoctorManageProfile extends AppCompatActivity {
 
 
         btnVerification.setOnClickListener(v -> {
-            Toast.makeText(this,
-                    "Verification request sent to admin!", Toast.LENGTH_SHORT).show();
+            requestDoctorVerification();
         });
 
 
@@ -250,6 +271,7 @@ public class DoctorManageProfile extends AppCompatActivity {
                 myMap.put("consultationtime",String.valueOf(etconsultationtime.getText()));
                 myMap.put("consultationfee",String.valueOf(etconsultationfee.getText()));
                 myMap.put("consultationlimit", String.valueOf(etconsultationlimit.getText()));
+                myMap.put("bmdc", etbmdc.getText().toString());
 
                 return myMap;
             }
@@ -258,6 +280,95 @@ public class DoctorManageProfile extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(DoctorManageProfile.this);
         queue.add(stringRequest);
 
+    }
+
+
+    private void requestDoctorVerification(){
+
+        String url =
+                "https://ifathemalapp.com/apps/healthline/request_doctor_verification.php";
+
+        StringRequest request = new StringRequest(
+                Request.Method.POST,
+                url,
+
+                response -> {
+
+                    Log.d("VERIFY_RESPONSE", response);
+
+                    try {
+
+                        JSONObject jsonObject =
+                                new JSONObject(response);
+
+                        String status =
+                                jsonObject.getString("status");
+
+                        String message =
+                                jsonObject.getString("message");
+
+                        Toast.makeText(
+                                this,
+                                message,
+                                Toast.LENGTH_SHORT
+                        ).show();
+
+                        if(status.equals("success")){
+
+                            tvverification.setText(
+                                    "Verification Requested"
+                            );
+
+                            btnVerification.setEnabled(false);
+                        }
+
+                    } catch (Exception e){
+
+                        e.printStackTrace();
+
+                        Toast.makeText(
+                                this,
+                                "Parsing Error",
+                                Toast.LENGTH_SHORT
+                        ).show();
+                    }
+
+                },
+
+                error -> {
+
+                    error.printStackTrace();
+
+                    Toast.makeText(
+                            this,
+                            "Network Error",
+                            Toast.LENGTH_SHORT
+                    ).show();
+                }
+
+        ){
+
+            @Override
+            protected Map<String, String> getParams() {
+
+                Map<String,String> map =
+                        new HashMap<>();
+
+                map.put("user_id", id);
+
+                return map;
+            }
+        };
+
+        request.setRetryPolicy(
+                new DefaultRetryPolicy(
+                        10000,
+                        1,
+                        1.0f
+                )
+        );
+
+        Volley.newRequestQueue(this).add(request);
     }
 
 }

@@ -1,6 +1,8 @@
 package com.enumtech.healthline;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -242,6 +244,23 @@ public class BloodDonorList extends AppCompatActivity {
             tvlocation.setText(location);
             tvphone.setText(number);
             tvlastdonation.setText("Last Donated: "+last_donated);
+
+            btncontactdonor.setOnClickListener(v -> {
+
+                String phoneNumber = number;
+
+                if (!phoneNumber.isEmpty()) {
+
+                    Intent intent = new Intent(Intent.ACTION_DIAL);
+                    intent.setData(Uri.parse("tel:" + phoneNumber));
+                    startActivity(intent);
+
+                } else {
+                    Toast.makeText(BloodDonorList.this,
+                            "No number found",
+                            Toast.LENGTH_SHORT).show();
+                }
+            });
 
 
 

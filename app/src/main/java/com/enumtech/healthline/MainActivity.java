@@ -71,6 +71,15 @@ public class MainActivity extends AppCompatActivity {
                 fragmentTransaction.replace(R.id.framelayout, new BloodDonorHomeFragment());
                 fragmentTransaction.commit();
             }
+            else if(role.equalsIgnoreCase("ambulance driver")){
+                fragmentTransaction.replace(R.id.framelayout, new AmbulanceHomeFragment());
+                fragmentTransaction.commit();
+            }
+
+            else if(role.equalsIgnoreCase("admin")){
+                fragmentTransaction.replace(R.id.framelayout, new AdminHomeFragment());
+                fragmentTransaction.commit();
+            }
 
             bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
                 @Override
@@ -92,8 +101,17 @@ public class MainActivity extends AppCompatActivity {
                         else if(role.equalsIgnoreCase("doctor")){
                             fragmentTransaction.replace(R.id.framelayout, new DoctorHomeFragment());
                             fragmentTransaction.commit();
-                        } else if (role.equalsIgnoreCase("blood donor")) {
+                        }
+                        else if (role.equalsIgnoreCase("blood donor")) {
                             fragmentTransaction.replace(R.id.framelayout, new BloodDonorHomeFragment());
+                            fragmentTransaction.commit();
+                        }
+                        else if (role.equalsIgnoreCase("ambulance driver")) {
+                            fragmentTransaction.replace(R.id.framelayout, new AmbulanceHomeFragment());
+                            fragmentTransaction.commit();
+                        }
+                        else if (role.equalsIgnoreCase("admin")) {
+                            fragmentTransaction.replace(R.id.framelayout, new AdminHomeFragment());
                             fragmentTransaction.commit();
                         }
                     }

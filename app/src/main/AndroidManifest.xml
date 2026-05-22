@@ -11,9 +11,18 @@
         android:label="HealthLine"
         android:supportsRtl="true"
         android:theme="@style/Theme.HealthLine">
+
         <activity
             android:name=".GiveReviewActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".VerifyDoctorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MyAmbulanceRequestActivity"
+            />
+
         <activity
             android:name=".AmbulanceManageRequestActivity"
             android:exported="false" />
@@ -23,6 +32,15 @@
         <activity
             android:name=".AmbulanceManageProfileActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".ViewReviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SubmitReviewActivity"
+            android:exported="false" />
+
+
         <activity
             android:name=".MainActivity"
             android:exported="false" />

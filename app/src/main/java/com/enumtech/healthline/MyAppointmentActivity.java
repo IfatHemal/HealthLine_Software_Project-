@@ -36,6 +36,7 @@ public class MyAppointmentActivity extends AppCompatActivity {
 
     String userId;
     MyAdapter myAdapter;
+    TextView totalappointment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,7 @@ public class MyAppointmentActivity extends AppCompatActivity {
         });
 
         appointmentsList = findViewById(R.id.appointmentsList);
+        totalappointment = findViewById(R.id.totalappointment);
 
         SharedPreferences sharedPreferences = getSharedPreferences("myApp",MODE_PRIVATE);
 
@@ -183,8 +185,12 @@ public class MyAppointmentActivity extends AppCompatActivity {
                             arrayList.add(map);
                         }
 
+                        if(arrayList.isEmpty()){
+                            totalappointment.setText("You don't have any booked appointment");
+                        } else {
+                            totalappointment.setText("Total "+arrayList.size()+" appointment found");
+                        }
                         myAdapter.notifyDataSetChanged();
-
 
                     } catch (Exception e){
                         e.printStackTrace();

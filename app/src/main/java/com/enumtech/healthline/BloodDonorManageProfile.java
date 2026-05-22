@@ -148,12 +148,12 @@ public class BloodDonorManageProfile extends AppCompatActivity {
 
 
         if(sharedPreferences.getString("status","").equalsIgnoreCase("active")){
-            tvStatusBadge.setText("Active");
+            tvStatusBadge.setText("Activated");
             statusbadge.setBackgroundResource(R.drawable.bg_status_active);
             tvStatusBadge.setTextColor(Color.parseColor("#16A34A"));
         }
         else if(sharedPreferences.getString("status","").equalsIgnoreCase("deactive")){
-            tvStatusBadge.setText("Inactive");
+            tvStatusBadge.setText("Deactivated");
             tvStatusBadge.setTextColor(Color.parseColor("#EF4444"));
             statusbadge.setBackgroundResource(R.drawable.bg_status_deactive);
         }
@@ -169,7 +169,7 @@ public class BloodDonorManageProfile extends AppCompatActivity {
             else {
 
                 String url = "https://ifathemalapp.com/apps/healthline/update_blooddonor_activestatus.php";
-                updateBloodDonorProfileRequest(url, "active");
+                updateBloodDonorProfileRequest(url, "activated");
                 getBloodDonorRequest();
 
                 Toast.makeText(this, "Your ID is now Activated", Toast.LENGTH_SHORT).show();
@@ -181,7 +181,7 @@ public class BloodDonorManageProfile extends AppCompatActivity {
 
 
             String url = "https://ifathemalapp.com/apps/healthline/update_blooddonor_activestatus.php";
-            updateBloodDonorProfileRequest(url,"deactive");
+            updateBloodDonorProfileRequest(url,"deactivated");
             getBloodDonorRequest();
             Toast.makeText(this, "Your ID is now Deactivated", Toast.LENGTH_SHORT).show();
         });
@@ -282,7 +282,7 @@ public class BloodDonorManageProfile extends AppCompatActivity {
                         tvnumber.setText(number);
                         tvbloodgrp.setText(blood);
                         tvlocation.setText(location);
-                        if(status.equals("active")){
+                        if(status.equals("activated")){
                             tvStatusBadge.setTextColor(Color.parseColor("#16A34A"));
                             statuspoint.setBackgroundResource(R.drawable.bg_btn_active);
                             statusbadge.setBackgroundResource(R.drawable.bg_status_active);
@@ -292,7 +292,7 @@ public class BloodDonorManageProfile extends AppCompatActivity {
                             statuspoint.setBackgroundResource(R.drawable.bg_btn_deactive);
                             statusbadge.setBackgroundResource(R.drawable.bg_status_deactive);
                         }
-                        tvStatusBadge.setText(status);
+                        tvStatusBadge.setText(status.toUpperCase());
 
                     } catch (Exception e){
                         e.printStackTrace();
