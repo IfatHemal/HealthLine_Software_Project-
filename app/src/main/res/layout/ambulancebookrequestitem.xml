@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="15dp"
+    android:background="@drawable/bg_card"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        >
+
+
+        <TextView
+            android:id="@+id/tvname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ahmed Hasan"
+            android:textStyle="bold"
+            android:textColor="#044BFB"
+            android:textSize="16sp"
+            android:layout_marginBottom="7dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight=".8"
+            android:background="@drawable/bg_icon_box_blue"
+            android:padding="5dp"
+            />
+
+        <TextView
+            android:id="@+id/tvstatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Requested"
+            android:textStyle="bold"
+            android:textColor="#E91E63"
+            android:textSize="16sp"
+            android:layout_marginBottom="7dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1.2"
+            android:gravity="center"
+            android:layout_marginRight="10dp"
+            android:padding="5dp"
+            android:background="@drawable/bg_icon_box_green"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="7dp"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:src="@drawable/location_icon"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pickup"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                />
+            <TextView
+                android:id="@+id/tvpickup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mirpur-10, Dhaka"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="7dp"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:src="@drawable/destination_icon"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Destination"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                />
+            <TextView
+                android:id="@+id/tvdestination"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Apollo Hospital Dhaka"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="7dp"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:src="@drawable/calender_icon"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                />
+            <TextView
+                android:id="@+id/tvdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="20 Apr, 2026"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:src="@drawable/watch_icon"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Time"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                />
+            <TextView
+                android:id="@+id/tvtime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3:30 PM"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutcontact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="7dp"
+        android:visibility="gone"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:src="@drawable/call_icon"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contact"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                />
+            <TextView
+                android:id="@+id/tvcontact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="017xxxxxxx45"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginTop="7dp"
+        >
+        <Button
+            android:id="@+id/btndecline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Decline"
+            android:layout_weight="1.3"
+            android:textColor="#ffffff"
+            android:layout_marginRight="2dp"
+            android:backgroundTint="#DF0202"
+            android:visibility="visible"
+            />
+        <Button
+            android:id="@+id/btnaccept"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Accept"
+            android:layout_weight=".7"
+            android:backgroundTint="#055DF6"
+            android:textColor="#ffffff"
+            android:visibility="visible"
+            />
+
+        <Button
+            android:id="@+id/btncontact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📞  Call"
+            android:layout_weight=".7"
+            android:backgroundTint="#055DF6"
+            android:textColor="#ffffff"
+            android:visibility="gone"
+            />
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btncomplete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mark as Completed"
+        android:backgroundTint="#2D860D"
+        android:textColor="#ffffff"
+        android:visibility="gone"
+
+        />
+
+
+
+
+
+
+
+</LinearLayout>
